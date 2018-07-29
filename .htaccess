@@ -1,0 +1,16 @@
+# BEGIN Permalink
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /sites/framework/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /sites/framework/index.php [L]
+</IfModule>
+# END Permalink
+
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 200
+php_value max_input_time 200
+LimitRequestBody 0
