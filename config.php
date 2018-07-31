@@ -19,4 +19,5 @@ $view = (isset($_GET['view_as']) ? $_GET['view_as'] : 'default');
 function __autoload($class_name){include_once 'class/' . $class_name . '.php';}
 
 $db = new db($conn);
+$theme = "theme1";
 ?>
