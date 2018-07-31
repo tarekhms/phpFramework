@@ -60,8 +60,9 @@ table, th, td {border: 0; text-align: center;}
 
 /*--HEADER--------------------------------------------*/
 .heaader{height:50px;}
-.heaader>div{background-color:#fff; width:730px;height:100%;padding:7px 15px 0 15px;margin:0 auto 0 auto;text-align: left;border:1px #a2a9b1 solid; border-top: 0;}
-
+.heaader>div{background-color:#fff; width:730px;height:100%;margin:0 auto 0 auto;text-align: left;border:1px #a2a9b1 solid; border-top: 0;}
+.heaader>div{display: flex;flex-flow:row nowrap;justify-content:flex-start;align-items:center;}
+.heaader>div>span{padding: 10px;}
 
 /*--BODY---------------------------------------------*/
 
