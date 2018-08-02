@@ -4,15 +4,15 @@ error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_W
 session_set_cookie_params(0);
 session_cache_limiter(false);
 
-$offline_delay = 2;
+define( 'OFFLINE_DELAY', 2);
 $host = $_SERVER['HTTP_HOST'];
 preg_match("/[^\.\/]+\.[^\.\/]+$/", $host, $matches);
 $host = ($matches[0]&&$matches[0]<>"0.1"?$matches[0]:$host);
 define( 'SERVER_NAME', $host );
-define( 'PARAMS', explode("/", strtok($_SERVER['REQUEST_URI'], '?')));
+define( 'PARAMS', explode("/", preg_replace('/^\/|\/$/', '', strtok($_SERVER['REQUEST_URI'], '?'))));
 define( 'ERROR', FALSE);
 
-$base = PARAMS[1+$offline_delay];
+$base = PARAMS[OFFLINE_DELAY];
 $base = ($base == "" ? "home" : $base);
 $view = (isset($_GET['view_as']) ? $_GET['view_as'] : 'default');
 

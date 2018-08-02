@@ -15,7 +15,12 @@ class core{
   public function construct($page, $param=array(), $view=null, $db=null, $params=null, $page_elements=array()){
     if(!file_exists("process/".$page.".php") || !file_exists("html/".$page.".html")){$page = "404";}
     require("process/".$page.".php");
-    $this->ele = $elements;
+    if(count(PARAMS)-OFFLINE_DELAY>1){
+      if(!$elements["controllers"]){$page = "404"; $elements = [];require("process/".$page.".php");}
+      elseif(count($elements["controllers"])<count(PARAMS)-OFFLINE_DELAY-1){$page = "404"; $elements = [];require("process/".$page.".php");}
+      else{foreach ($elements["controllers"] as $key => $value) {if(($key<=count(PARAMS)-OFFLINE_DELAY-2)&&($value<>PARAMS[$key+OFFLINE_DELAY+1])){$page = "404"; $elements = [];require("process/".$page.".php");}}}
+    }
+    $this->ele = @$elements;
     $structure = file_get_contents("html/".$page.".html");
     foreach($page_elements as $k=>$v){$structure = str_replace("[$k]", $v, $structure);}
     return $structure;
