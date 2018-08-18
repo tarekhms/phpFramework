@@ -1,6 +1,6 @@
 /*--RESETTING------------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700");
-/*@import url("https://fonts.googleapis.com/css?family=Raleway:800");*/
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,300,600,700,800");
 
 *{box-sizing: border-box;}
 html,body{margin:0;padding:0;height:100%;}
@@ -97,8 +97,8 @@ table, th, td {border: 0; text-align: center;}
 
 	/*--HOME PAGE-------------------------------------------------*/
 	.intro{background: linear-gradient(150deg, #0e4b4c 20%, #116466 80%); text-align: left;color:#fff;}
-	.intro1{font-weight: 300;font-size: 3rem; padding: 100px 0 0 0; }
-	.intro2{font-weight: bold;font-size: 4rem; padding: 60px 0 0 0; }
+	.intro1{font-family:"Raleway",sans-serif; font-weight: 300;font-size: 3rem; padding: 100px 0 0 0; }
+	.intro2{font-family:"Raleway",sans-serif; font-weight: bold;font-size: 4rem; padding: 60px 0 0 0; }
 
 
 	/*--EXPLORER-------------------------------------------------*/
