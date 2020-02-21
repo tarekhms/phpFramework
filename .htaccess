@@ -1,11 +1,11 @@
 # BEGIN Permalink
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /sites/framework/
+RewriteBase /sites/git/project1/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /sites/framework/index.php [L]
+RewriteRule . /sites/git/project1/index.php [L]
 </IfModule>
 # END Permalink
 

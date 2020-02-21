@@ -2,6 +2,7 @@
 class core{
   private $ele = array();
   public function __construct($page, $view, $db, $theme, $params){
+
     $this->ele["content"] = $this->construct($page, null, $view, $db, $params);
     if($view=="default"){
       if(isset($this->ele["theme"]) && file_exists("themes/".$this->ele["theme"]."/base.html")){$structure = file_get_contents("themes/".$this->ele["theme"]."/base.html");}

@@ -1,10 +1,9 @@
 <?php
 //error_reporting(0);
 error_reporting( E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_ERROR | E_WARNING | E_PARSE | E_USER_ERROR | E_USER_WARNING | E_RECOVERABLE_ERROR );
-session_set_cookie_params(0);
-session_cache_limiter(false);
 
-define( 'OFFLINE_DELAY', 2);
+
+define( 'OFFLINE_DELAY', 3);
 $host = $_SERVER['HTTP_HOST'];
 preg_match("/[^\.\/]+\.[^\.\/]+$/", $host, $matches);
 $host = ($matches[0]&&$matches[0]<>"0.1"?$matches[0]:$host);
